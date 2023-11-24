@@ -35,7 +35,7 @@ import com.gentalha.aluvery.ui.theme.Purple40
 import com.gentalha.aluvery.ui.theme.Purple80
 
 @Composable
-fun ProductCard(product: ProductModel = ProductModel("", "", "")) {
+fun ProductCard(product: ProductModel = ProductModel("", "", "", "")) {
     Surface(
         shape = RoundedCornerShape(16.dp),
         shadowElevation = 4.dp
