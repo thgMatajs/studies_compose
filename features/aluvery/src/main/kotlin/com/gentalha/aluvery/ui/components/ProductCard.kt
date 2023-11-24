@@ -1,6 +1,5 @@
 package com.gentalha.aluvery.ui.components
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -29,6 +28,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 import com.gentalha.aluvery.R
 import com.gentalha.aluvery.model.ProductModel
 import com.gentalha.aluvery.ui.theme.Purple40
@@ -57,16 +57,16 @@ fun ProductCard(product: ProductModel = ProductModel("", "", "")) {
                         )
                     )
             ) {
-                Image(
-                    painter = painterResource(id = R.drawable.ic_launcher_background),
+                AsyncImage(
+                    model = product.imgUrl,
                     contentDescription = "",
                     modifier = Modifier
                         .size(100.dp)
                         .offset(y = 50.dp)
                         .clip(CircleShape)
                         .align(BottomCenter),
-                    contentScale = ContentScale.Crop
-
+                    contentScale = ContentScale.Crop,
+                    placeholder = painterResource(id = R.drawable.ic_launcher_background)
                 )
             }
             Spacer(modifier = Modifier.height(50.dp))
